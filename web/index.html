@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Comic Frontier 22 Catalog Search</title>
+  <meta name="description"
+        content="Pencarian cepat untuk katalog Comic Frontier 22 — cari circle by Fandom, Nama, atau Kode booth." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Comic Frontier 22 Catalog Search</h1>
+    <p class="sub">
+      Cari circle CF22 by fandom, nama, atau kode booth. Klik header kolom
+      untuk sort, klik baris untuk buka halaman circle-nya.
+    </p>
+  </header>
+
+  <main>
+    <form id="search" autocomplete="off"
+          onsubmit="event.preventDefault()">
+      <label>
+        <span>Fandom</span>
+        <input type="search" id="q-fandom"
+               placeholder="contoh: genshin, idolmaster, uma musume" />
+      </label>
+      <label>
+        <span>Circle Name</span>
+        <input type="search" id="q-name" placeholder="contoh: myavi" />
+      </label>
+      <label>
+        <span>Circle Code</span>
+        <input type="search" id="q-code" placeholder="contoh: AF-05" />
+      </label>
+      <button type="button" id="reset-btn" title="Reset semua filter">
+        Reset
+      </button>
+    </form>
+
+    <div id="status" class="status">Loading catalog…</div>
+
+    <div class="table-wrap">
+      <table id="results">
+        <thead>
+          <tr>
+            <th data-sort="name" class="sortable">Circle Name</th>
+            <th data-sort="code" class="sortable">Circle Code</th>
+            <th data-sort="fandom" class="sortable">Fandom</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <p>
+      Data dari
+      <a href="https://catalog.comifuro.net/catalog" target="_blank"
+         rel="noopener">catalog.comifuro.net</a>.
+      Tidak berafiliasi dengan Comic Frontier.
+      <a href="https://github.com/" target="_blank" rel="noopener"
+         id="repo-link">Source di GitHub</a>.
+    </p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
